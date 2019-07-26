@@ -11,6 +11,7 @@ const LocalStrategy = require('passport-local');
 const localOptions = { usernameField: 'email' };
 
 const localLogin = new LocalStrategy(localOptions, async (email, password, done) => {
+
   try {
     const user = await User.findOne({ email });
     if(!user) {

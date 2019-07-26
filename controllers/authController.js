@@ -33,6 +33,6 @@ module.exports = {
     }
   },
   signIn: (req, res) => {
-    res.send("I'm hit");
+    res.send({ token: tokenForUser(req.user)});
   }
 };

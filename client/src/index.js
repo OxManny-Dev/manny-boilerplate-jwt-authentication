@@ -8,6 +8,7 @@ import reduxThunk from 'redux-thunk';
 // Import Containers
 import App from './containers/App';
 import Counter from './containers/Counter';
+import Stuff from './containers/Stuff';
 
 // Import components
 import Welcome from './components/Welcome';
@@ -30,6 +31,7 @@ ReactDOM.render(
       <App>
         <Route exact path='/' component={Welcome}/>
         <Route exact path='/counter' component={Counter}/>
+        <Route exact path='/stuff' component={Stuff}/>
       </App>
     </Router>
   </Provider>

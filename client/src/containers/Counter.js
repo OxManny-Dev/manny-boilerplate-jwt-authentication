@@ -19,6 +19,7 @@ class Counter extends Component {
       <div>
         <h1>Counter</h1>
         <p>Counter: {this.state.counter}</p>
+        <p>myFave: {this.props.myFaveNumber}</p>
         <Button handleClick={this.handleIncrement}>Increment</Button>
         <Button handleClick={this.handleDecrement}>Decrement</Button>
       </div>

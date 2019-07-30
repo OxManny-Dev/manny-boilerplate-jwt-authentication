@@ -11,6 +11,7 @@ import Counter from './containers/Counter';
 import Stuff from './containers/Stuff';
 import Signup from './containers/Signup';
 import Signin from './containers/Signin';
+import Signout from './containers/Signout';
 
 // Import components
 import Welcome from './components/Welcome';
@@ -38,6 +39,7 @@ ReactDOM.render(
         <Route exact path='/stuff' component={Stuff}/>
         <Route exact path='/signup' component={Signup}/>
         <Route exact path='/signin' component={Signin}/>
+        <Route exact path='/signout' component={Signout}/>
       </App>
     </Router>
   </Provider>

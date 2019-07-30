@@ -23,7 +23,13 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  todos: [
+    {
+      ref: 'Todo',
+      type: Schema.Types.ObjectId
+    }
+  ]
 });
 
 UserSchema.pre('save', async function(next){

@@ -4,7 +4,8 @@ module.exports = {
   getTodos: async (req, res) => {
     try {
       const user = await db.User.findById(req.user._id).populate('todos');
-      res.json(user.todos);
+      console.log(user.todos);
+      res.json({ todos: user.todos });
     } catch(e) {
       res.json(e);
     }

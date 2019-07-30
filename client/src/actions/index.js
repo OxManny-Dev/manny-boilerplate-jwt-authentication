@@ -1,4 +1,4 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER, AUTH_USER, AUTH_ERROR } from "./types";
+import { INCREMENT_COUNTER, DECREMENT_COUNTER, AUTH_USER, AUTH_ERROR, ADD_TODO, TODO_ERROR, FETCH_TODOS } from "./types";
 import axios from 'axios';
 
 
@@ -45,6 +45,36 @@ export const signout = () => {
   };
 };
 
+
+export const fetchTodos = () => async dispatch => {
+  try {
+    const response = await axios.get('/api/todo', {
+      headers: { authorization: localStorage.getItem('token')}
+    });
+
+    dispatch({ type: FETCH_TODOS, payload: response.data.todos });
+  } catch(e) {
+    dispatch({ type: TODO_ERROR, payload: 'Something bad happened' });
+  }
+}
+
+export const addTodo = formValue => async dispatch => {
+  try {
+    await axios.post('/api/todo', formValue, {
+      headers: { authorization: localStorage.getItem('token') }
+    });
+
+    const todos = await axios.get('/api/todo', {
+      headers: { authorization: localStorage.getItem('token')}
+    });
+
+    console.log("Testing");
+
+    dispatch({ type: ADD_TODO, payload: todos.data.todos});
+  } catch(e) {
+    dispatch({ type: TODO_ERROR, payload: 'Something went wrong'});
+  }
+};
 
 
 

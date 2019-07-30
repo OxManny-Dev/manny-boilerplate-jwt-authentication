@@ -12,6 +12,7 @@ import Stuff from './containers/Stuff';
 import Signup from './containers/Signup';
 import Signin from './containers/Signin';
 import Signout from './containers/Signout';
+import Todo from './containers/Todo';
 
 // Import components
 import Welcome from './components/Welcome';
@@ -40,6 +41,7 @@ ReactDOM.render(
         <Route exact path='/signup' component={Signup}/>
         <Route exact path='/signin' component={Signin}/>
         <Route exact path='/signout' component={Signout}/>
+        <Route exact path='/todo' component={Todo}/>
       </App>
     </Router>
   </Provider>

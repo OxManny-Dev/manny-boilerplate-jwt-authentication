@@ -70,15 +70,15 @@ const validate = formValues => {
   const errors = {};
   console.log("validator", formValues);
 
-  if(!formValues.email) {
-    errors.email = 'You must enter an email';
-  }
+  // if(!formValues.email) {
+  //   errors.email = 'You must enter an email';
+  // }
 
-  if(formValues.email){
-    if(!validator.isEmail(formValues.email)) {
-      errors.email = "You must enter a valid email address";
-    }
-  }
+  // if(formValues.email){
+  //   if(!validator.isEmail(formValues.email)) {
+  //     errors.email = "You must enter a valid email address";
+  //   }
+  // }
 
   if(!formValues.password){
     errors.password = "You must enter a password";
